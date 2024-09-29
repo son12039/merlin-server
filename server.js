@@ -19,7 +19,7 @@ io.on("connection", (socket) => {
 
   socket.on("msg", (msg) => {
     msglist.push(msg);
-    socket.emit("msg", msg);
+    io.emit("msg", msg);
     console.log(msglist);
   });
 });
