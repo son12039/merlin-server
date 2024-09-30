@@ -18,14 +18,13 @@ io.on("connection", (socket) => {
   console.log(`클라이언트 IP: ${clientIp}`);
 
   socket.on("msg", (msg) => {
-    if (msg == "히든콤보입력뿌슝빠슝푸슝") {
+    if (msg.msg == "히든콤보입력뿌슝빠슝푸슝") {
       msglist.length = 0;
     } else {
       msglist.push(msg);
     }
 
     io.emit("msglist", msglist);
-    console.log(msglist);
   });
 });
 
